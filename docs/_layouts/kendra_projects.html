@@ -1,0 +1,13 @@
+---
+layout: kendra_default
+---
+{% for project in page.projects %}
+  {{ project.title }}
+  {{ project.year }}
+  {{ project.description }}
+  
+  {% for project_img in project.images %}
+    <img src="{{ site.baseurl }}/{{ project_img.url }}" alt="" width="500" height="600"><br></br>
+  {% endfor %}
+
+{% endfor %}

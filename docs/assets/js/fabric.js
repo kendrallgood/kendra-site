@@ -47,7 +47,7 @@ var backgroundColor = 0xcce0ff;
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
-var clothPathNormalMap = 'https://sjip1492.github.io/kendra-site/assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
+var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
 var floorPosition = - window.innerHeight / 2;
 
 var theta = 0;

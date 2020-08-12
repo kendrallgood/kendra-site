@@ -28,8 +28,6 @@ var params = {
     togglePins: togglePins
 };
 
-console.log("here");
-
 var DAMPING = 0.03;
 // var DAMPING = 0.01;
 var DRAG = 1 - DAMPING;
@@ -63,10 +61,8 @@ var tmpForce = new THREE.Vector3();
 var backgroundColor = 0xcce0ff; 
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
-// var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
-// var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
-var clothPath = 'assets/images/textures/TexturesCom_FabricWool0026_M.jpg';
-var clothPathNormalMap = 'assets/images/textures/normal_yarn_texture.jpg';
+var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
+var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
 var floorPosition = - window.innerHeight / 2;
 
 var theta = 0;
@@ -437,7 +433,7 @@ function init() {
     var clothTexture = loader.load(clothPath);
     clothTexture.anisotropy = 16;
 
-    // var normalMap = loader.load(clothPathNormalMap);
+    var normalMap = loader.load(clothPathNormalMap);
 
     var clothMaterial = new THREE.MeshPhongMaterial( {
         map: clothTexture,
@@ -445,7 +441,7 @@ function init() {
         alphaTest: 0.5
     } );
 
-    // clothMaterial.normalMap = normalMap;
+    clothMaterial.normalMap = normalMap;
     
     // cloth geometry
     clothGeometry = new THREE.ParametricBufferGeometry( clothFunction, cloth.w, cloth.h );

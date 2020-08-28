@@ -1,0 +1,87 @@
+projects:
+  - title: "Exodus Unseen"
+    project_url: "/exodus-unseen"
+    year: "2018"
+    spotlight_image_url: "/assets/images/projects/exodus/04a04eb1-5e87-4a66-aa5d-c981b457a207_rw_3840.jpg"
+    images:
+      - url: "/assets/images/projects/exodus/04a04eb1-5e87-4a66-aa5d-c981b457a207_rw_3840.jpg"
+      - url: "/assets/images/projects/exodus/6791c447-8304-434a-a504-93707a7db354_rw_1920.jpg"
+      - url: "/assets/images/projects/exodus/6778d235-bac3-419a-84f7-ab4e219e594e_rw_1920.jpg"
+      - url: "/assets/images/projects/exodus/4ba82cf7-8f27-4a72-a8ae-89afdbcceebb_rw_1920.jpg"
+      - url: "/assets/images/projects/exodus/3e1d6e17-b88b-4ca5-a7f1-137de080eb6b_rw_1920.jpg"
+      - url: "/assets/images/projects/exodus/1daf9c46-a09d-4823-a421-7e0c85f3b2cf_rw_3840.jpg"
+      - url: "/assets/images/projects/exodus/c24f9851-5af3-4673-9f7b-2b149306680a_rw_3840.jpg"
+      - url: "/assets/images/projects/exodus/0bd2c809-0c8d-4bfe-8e81-c01087a1b8c7_rw_3840.jpg"
+      - url: "/assets/images/projects/exodus/3bc18b24-158f-4e79-acaf-115c2149cfd8_rw_3840.jpg"
+  - title: "One Piece Wonder"
+    year: "2017"
+    project_url: "/one-piece-wonder"
+    description: "Whole garment sweater and pants knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software, then linked together using a linking machine. Design on back and legs printed on Shima Seiki SIP-160F3 flatbed inkjet printer with reactive ink."
+    spotlight_image_url: "/assets/images/projects/one-piece/4b81d035-f71f-471e-bf86-772445532b8d_rw_1920.jpg"
+    images:
+      - url: "/assets/images/projects/one-piece/4b81d035-f71f-471e-bf86-772445532b8d_rw_1920.jpg"
+      - url: "/assets/images/projects/one-piece/5f5bb7df-d3cb-49ae-83e4-0e1f40dcafa7_rw_1920.jpg"
+      - url: "/assets/images/projects/one-piece/78c9e9c8-7e84-4757-b55f-10759817e085_rw_1200.jpg"
+      - url: "/assets/images/projects/one-piece/87090a62-1fbf-4b1d-88ee-e079c4d286bf_rw_1200.jpg"
+      - url: "/assets/images/projects/one-piece/a3057e45-74a7-4779-85ce-949c685d8f27_rw_1920.jpg"
+      - url: "/assets/images/projects/one-piece/c2288a39-6431-41e3-a194-c3a9b8c7479e_rw_1920.jpg"
+      - url: "/assets/images/projects/one-piece/c0477401-bcdc-4c1b-bfb6-406afbaac22a_rw_1920.jpg"
+      - url: "/assets/images/projects/one-piece/e508c0cd-e443-45a1-97b3-6df38dd3ac91_rw_3840.jpg"
+  - title: "Mellow Yellow"
+    year: "2017"
+    project_url: "/mellow-yellow"
+    description: "Whole garment knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software. Yarn; 3-Ply, 8/1 MT 100% COTTON, 20/1 100% COTTON, 18/1 100% COTTON, Dyed using direct dyes. Dyed twice for more rich golden color"
+    spotlight_image_url: "/assets/images/projects/mellow/2eb01e73-1d73-474a-9605-e2aa22478b26_rw_3840.jpg"
+    images:
+      - url: "/assets/images/projects/mellow/2eb01e73-1d73-474a-9605-e2aa22478b26_rw_3840.jpg"
+        description: "Dyed once with direct dye, before second dye."
+      - url: "/assets/images/projects/mellow/1d3bf0bb-9fab-4238-bb37-7a65574b4d51_rw_3840_2.jpg"
+      - url: "/assets/images/projects/mellow/599292ae-09df-4f5c-98d2-8a2cf0dea6b8_rw_3840.jpg"
+  - title: Gestural Symmetry
+    year: 2015
+    project_url: "/gestural-symmetry"
+    description: >-
+      "This garment was made in collaboration with Eleanor Yeh inspired by MC Escher. The pattern pieces were engineered in order for the textile design to fit perfectly together. It was printed on the Mutoh MC3 Digital Textile Printer onto fabric and sewn together."
+    spotlight_image_url: "/assets/images/projects/gestural/3cbf983814709a07dd66458e_rw_1920.png"
+    images:
+      - url: "/assets/images/projects/gestural/3cbf983814709a07dd66458e_rw_1920.png"
+      - url: "/assets/images/projects/gestural/7cb67dbab1a8afbc936abd3e.jpg"
+        description: "Veritas Digital Photography"
+      - url: "/assets/images/projects/gestural/9616926d2b65f62c5982423c_rw_1920.jpg"
+      - url: "/assets/images/projects/gestural/cf45171ac61f68242e5a90f5_rw_1920.jpg"
+  - title: Journey Lines
+    project_url: "/journey-lines"
+    year: 2017
+    spotlight_image_url: "/assets/images/projects/journey/26f6481cdeffd65419ab55ae_rw_1200.jpg"
+    images:
+      - url: "/assets/images/projects/journey/26f6481cdeffd65419ab55ae_rw_1200.jpg"
+      - url: "/assets/images/projects/journey/5d263bf2d200b1ff06a0aa99_rw_1920.jpg"
+      - url: "/assets/images/projects/journey/811622897f3493cf6f27058d_rw_1200.jpg"
+        description: >-
+          "Loom Specs: AVL Computer Dobby, 8 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+      - url: "/assets/images/projects/journey/6c1251ca5025f40ff12f935e_rw_1920.jpg"
+        description:  >-
+          "Loom Specs: AVL Computer Dobby, 8 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+      - url: "/assets/images/projects/journey/fd5a6978b37d12aa4dfc4bbc_rw_1920.jpg"
+        description:  >-
+          "Loom Specs: AVL Computer Dobby, 8 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+      - url: "/assets/images/projects/journey/ab0fca5baebb04cb7b982faf_rw_1920.jpg"
+        description:  >-
+          "Loom Specs: AVL Computer Dobby, 8 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+      - url: "/assets/images/projects/journey/a4aa4f6f076ae61115f63d79_rw_1200.jpg"
+        description:  >-
+          "Loom Specs: AVL Computer Dobby, 16 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+      - url: "/assets/images/projects/journey/b27ab710111f7aaaec926291_rw_1920.jpg"
+        description:  >-
+          "Loom Specs: AVL Computer Dobby, 16 Harnesses,12 dents/inch, 1end/dent, 12 ends/inch"
+  - title: Encaustic Experimentation
+    year: 2016
+    project_url: "/encaustic-experimentation"
+    description: "Candle wax, pen and ink"    
+    spotlight_image_url: "/assets/images/projects/encaustic/001d77d2a9f573b2b47f9c6b_rw_1920.jpg"
+    images:
+      - url: "/assets/images/projects/encaustic/001d77d2a9f573b2b47f9c6b_rw_1920.jpg"
+      - url: "/assets/images/projects/encaustic/2e6275017c1e3bfbe465e5fd_rw_1920.jpg"
+      - url: "/assets/images/projects/encaustic/8bba852c5640915062b64391_rw_1920.jpg"
+      - url: "/assets/images/projects/encaustic/548f100e24b95a2465c17bb9_rw_1920.jpg"
+      - url: "/assets/images/projects/encaustic/2895151a321545f80b7ded39_rw_1920.jpg"

@@ -7,7 +7,45 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+// SITE-WIDE VARIABLES
+$fade-in-length: .5s;
+$hover-overlay-color: rgba(0, 0, 0, 0.75);
+$hover-overlay-text: #ffffff;
+$normal-font-size: 16px;
 
+// SITE WIDE STYLING
+body {
+    font-weight: 250 !important;
+    scroll-behavior: smooth;
+
+    a {
+        font-weight: 250 !important
+    }
+
+    h1, h2, h3 {
+        letter-spacing: 1.5px;
+    }
+
+    h1 {
+        font-weight: 550;
+        font-size: 35px;
+        font-style: italic;
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 28px;
+        font-style: italic;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 16px;
+    }
+}
+
+
+// HOMEPAGE STYLING
 .layout--kendra_home {
     .masthead {
         background-color: transparent;
@@ -19,4 +57,92 @@
     #site-nav {
         background-color: transparent;
     }
+}
+
+// PROJECTS PAGE STYLING
+.layout--kendra_projects {
+    .project {
+        float: left;
+        position: relative;
+        // padding-bottom: 56.25%;
+        max-width: 50%;
+        height: auto;
+
+        .project-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include breakpoint($medium) {
+            width: 50%;
+        }
+        @include breakpoint($large) {
+            width: 33.333%;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            padding-bottom: 75%;
+        }
+    }
+}
+
+// PROJECT PAGE STYLING
+.layout--kendra_project {
+    .project-images {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .project-image {
+        height: 85vh;
+        width: auto;
+        overflow: scroll;
+        float: left;
+        scroll-snap-align: none center;
+        flex: 0 0 auto;
+        padding: 50px;
+    }
+}
+
+
+// UTILS STYLING
+.hover-container {
+  position: relative;
+
+  &:hover {
+    .hover-overlay {
+        opacity: 1;
+        background: $hover-overlay-color;
+        transition: background $fade-in-length ease-in;
+        transition: opacity $fade-in-length ease-in;
+    }
+  }
+}
+
+.hover-overlay {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  background-color: none;
+  font-size: $normal-font-size;
+
+  transition: background $fade-in-length ease-out;
+  transition: opacity $fade-in-length ease-out;
+
+  width: 100%;
+  height: 100%;
+
+  p {
+    top: 33.33%;
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
 }

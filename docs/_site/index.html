@@ -9,14 +9,14 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Kendra Allgood - Kendra Allgood</title>
+<!-- begin _includes/seo.html --><title>Kendra Allgood - KENDRA ALLGOOD</title>
 <meta name="description" content="TEXTILE DESIGNER">
 
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Kendra Allgood">
+<meta property="og:site_name" content="KENDRA ALLGOOD">
 <meta property="og:title" content="Kendra Allgood">
 <meta property="og:url" content="http://localhost:4000/">
 
@@ -58,7 +58,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="" type="application/atom+xml" rel="alternate" title="Kendra Allgood Feed">
+<link href="" type="application/atom+xml" rel="alternate" title="KENDRA ALLGOOD Feed">
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,24 +69,19 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
 
 
+
+<!-- additional style sheets -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- additional scripts  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/assets/js/fade-in-scroll.js"></script>
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
@@ -117,7 +112,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Kendra Allgood
+          KENDRA ALLGOOD
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -162,8 +157,6 @@ var params = {
     togglePins: togglePins
 };
 
-console.log("here");
-
 var DAMPING = 0.03;
 // var DAMPING = 0.01;
 var DRAG = 1 - DAMPING;
@@ -178,7 +171,7 @@ var clothFunction = plane( restDistance * xSegs, restDistance * ySegs );
 var cloth = new Cloth( xSegs, ySegs );
 
 // var GRAVITY = 981 * 1.4;
-var GRAVITY = 581 * 1.4;
+var GRAVITY = 981 * 1.4;
 
 var gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 
@@ -194,14 +187,13 @@ var ballSize = window.innerHeight / 2;
 
 var tmpForce = new THREE.Vector3();
 
-var backgroundColor = 0xcce0ff; 
+var backgroundColor = 0xffffff; 
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
-// var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
-// var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
-var clothPath = 'assets/images/textures/TexturesCom_FabricWool0026_M.jpg';
-var clothPathNormalMap = 'assets/images/textures/normal_yarn_texture.jpg';
+var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
+var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
 var floorPosition = - window.innerHeight / 2;
+var ceilingPosition = window.innerHeight / 2 + window.innerHeight;
 
 var theta = 0;
 
@@ -462,7 +454,7 @@ function simulate( now ) {
     }
 
 
-    // Floor Constraints
+    // Ceiling/Floor Constraints
 
     for ( particles = cloth.particles, i = 0, il = particles.length; i < il; i ++ ) {
 
@@ -473,7 +465,12 @@ function simulate( now ) {
 
             pos.y = floorPosition;
 
+        } else {
+            if (pos.y > ceilingPosition) {
+                pos.y = ceilingPosition;
+            }
         }
+
 
     }
 
@@ -571,7 +568,7 @@ function init() {
     var clothTexture = loader.load(clothPath);
     clothTexture.anisotropy = 16;
 
-    // var normalMap = loader.load(clothPathNormalMap);
+    var normalMap = loader.load(clothPathNormalMap);
 
     var clothMaterial = new THREE.MeshPhongMaterial( {
         map: clothTexture,
@@ -579,7 +576,15 @@ function init() {
         alphaTest: 0.5
     } );
 
-    // clothMaterial.normalMap = normalMap;
+    clothMaterial.map.wrapS = clothMaterial.map.wrapT = THREE.RepeatWrapping;
+
+    // Now we only need to set a new map.repeat
+    clothMaterial.map.repeat.set( 10, 10 );
+
+    clothMaterial.normalMap = normalMap;
+
+    clothMaterial.normalMap.wrapS = clothMaterial.normalMap.wrapT = THREE.ClampToEdgeWrapping;
+    clothMaterial.normalMap.repeat.set( 10, 10 );
     
     // cloth geometry
     clothGeometry = new THREE.ParametricBufferGeometry( clothFunction, cloth.w, cloth.h );
@@ -714,6 +719,7 @@ function init() {
 
     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    document.addEventListener( 'mouseup', onDocumentMouseUp, false );
 }
 
 
@@ -725,6 +731,16 @@ function onWindowResize() {
     renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
+
+function onDocumentClick( event ) {
+
+    event.preventDefault();
+
+    GRAVITY = GRAVITY * -1.0;
+
+    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
+}
+
 
 function onDocumentMouseMove( event ) {
 
@@ -738,6 +754,16 @@ function onDocumentMouseDown( event ) {
     event.preventDefault();
 
     mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+}
+
+
+function onDocumentMouseUp( event ) {
+
+    event.preventDefault();
+
+    GRAVITY = GRAVITY * -1.0;
+
+    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 }
 
 function animate( now ) {
@@ -819,7 +845,7 @@ function render() {
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 Kendra Allgood. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 KENDRA ALLGOOD. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

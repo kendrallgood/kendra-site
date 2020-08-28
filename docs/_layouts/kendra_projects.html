@@ -1,13 +1,17 @@
 ---
 layout: kendra_default
 ---
-{% for project in page.projects %}
-  {{ project.title }}
-  {{ project.year }}
-  {{ project.description }}
-  
-  {% for project_img in project.images %}
-    <img src="{{ site.baseurl }}/{{ project_img.url }}" alt="" width="500" height="600"><br></br>
-  {% endfor %}
-
-{% endfor %}
+{% if site.data.projects %}
+    <div class="projects">
+        {% for project in site.data.projects.projects %}
+            <a class="project hover-container" href="{{ project.project_url }}">
+              <img class="project-image hover-image fade-in-scroll" src="{{ project.spotlight_image_url }}">
+                <div class="hover-overlay">
+                    <p>
+                        {{ project.title }} ({{ project.year }})
+                    </p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

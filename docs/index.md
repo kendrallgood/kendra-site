@@ -42,7 +42,7 @@ var clothFunction = plane( restDistance * xSegs, restDistance * ySegs );
 var cloth = new Cloth( xSegs, ySegs );
 
 // var GRAVITY = 981 * 1.4;
-var GRAVITY = 581 * 1.4;
+var GRAVITY = 981 * 1.4;
 
 var gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 
@@ -58,12 +58,13 @@ var ballSize = window.innerHeight / 2;
 
 var tmpForce = new THREE.Vector3();
 
-var backgroundColor = 0xcce0ff; 
+var backgroundColor = 0xffffff; 
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
 var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
 var floorPosition = - window.innerHeight / 2;
+var ceilingPosition = window.innerHeight / 2 + window.innerHeight;
 
 var theta = 0;
 
@@ -324,7 +325,7 @@ function simulate( now ) {
     }
 
 
-    // Floor Constraints
+    // Ceiling/Floor Constraints
 
     for ( particles = cloth.particles, i = 0, il = particles.length; i < il; i ++ ) {
 
@@ -335,7 +336,12 @@ function simulate( now ) {
 
             pos.y = floorPosition;
 
+        } else {
+            if (pos.y > ceilingPosition) {
+                pos.y = ceilingPosition;
+            }
         }
+
 
     }
 
@@ -441,7 +447,15 @@ function init() {
         alphaTest: 0.5
     } );
 
+    clothMaterial.map.wrapS = clothMaterial.map.wrapT = THREE.RepeatWrapping;
+
+    // Now we only need to set a new map.repeat
+    clothMaterial.map.repeat.set( 10, 10 );
+
     clothMaterial.normalMap = normalMap;
+
+    clothMaterial.normalMap.wrapS = clothMaterial.normalMap.wrapT = THREE.ClampToEdgeWrapping;
+    clothMaterial.normalMap.repeat.set( 10, 10 );
     
     // cloth geometry
     clothGeometry = new THREE.ParametricBufferGeometry( clothFunction, cloth.w, cloth.h );
@@ -576,6 +590,7 @@ function init() {
 
     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+    document.addEventListener( 'mouseup', onDocumentMouseUp, false );
 }
 
 
@@ -587,6 +602,16 @@ function onWindowResize() {
     renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
+
+function onDocumentClick( event ) {
+
+    event.preventDefault();
+
+    GRAVITY = GRAVITY * -1.0;
+
+    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
+}
+
 
 function onDocumentMouseMove( event ) {
 
@@ -600,6 +625,16 @@ function onDocumentMouseDown( event ) {
     event.preventDefault();
 
     mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+}
+
+
+function onDocumentMouseUp( event ) {
+
+    event.preventDefault();
+
+    GRAVITY = GRAVITY * -1.0;
+
+    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 }
 
 function animate( now ) {

@@ -31,7 +31,7 @@ layout: kendra_default_no_footer
             <div class="hover-container project-image">
               <div class="content">
                 <div class="image-overlay"></div>
-                <img id="{{ image_url.url }}" class="project-image content-image" src="{{ image_url.url }}">
+                <img id="{{ image_url.url }}" class="project-image content-image" src="{{ site.baseurl }}/{{ image_url.url }}">
                 <div class="content-details fadeIn-bottom">
                   <h3 class="content-title">{{ image_url.description }}</h3>
                 </div>
@@ -43,5 +43,5 @@ layout: kendra_default_no_footer
   {% endif %}
 {% endfor %}
 
-<script type="text/javascript" src="/assets/js/scrollspy-static/dist/scrollspy.min.js"></script>
-<script type="text/javascript" src="/assets/js/horizontal_scroll_project_page.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}//assets/js/scrollspy-static/dist/scrollspy.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}//assets/js/horizontal_scroll_project_page.js"></script>

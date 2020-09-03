@@ -1,18 +1,47 @@
 ---
-layout: kendra_default
+layout: kendra_default_no_footer
 ---
-{{ page.title }}
-
 {% for project in site.data.projects.projects %}
   {% if project.title == page.title %}
     <div class="project">
+      <div class="project-description-container">
+        <p class="project-title">
+          {{ project.title }}
+        </p>
+
+        {% if project.year %}
+          <p class="project-year">
+            {{ project.year }}
+          </p>
+        {% endif %}
+
+        {% if project.description %}
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+        {% endif %}
+      </div>
+     <!--  <div id="nav-div">
+        {% for image_url in project.images %}
+          <a href="#{{ image_url.url }}" class="nav-link"></a>
+        {% endfor %}
+      </div> -->
       <div class="project-images" id="images_container">
         {% for image_url in project.images %}
-          <img class="project-image" src="{{ image_url.url }}">
+            <div class="hover-container project-image">
+              <div class="content">
+                <div class="image-overlay"></div>
+                <img id="{{ image_url.url }}" class="project-image content-image" src="{{ image_url.url }}">
+                <div class="content-details fadeIn-bottom">
+                  <h3 class="content-title">{{ image_url.description }}</h3>
+                </div>
+              </div>
+            </div>
         {% endfor %}
       </div>
     </div>  
   {% endif %}
 {% endfor %}
 
+<script type="text/javascript" src="/assets/js/scrollspy-static/dist/scrollspy.min.js"></script>
 <script type="text/javascript" src="/assets/js/horizontal_scroll_project_page.js"></script>

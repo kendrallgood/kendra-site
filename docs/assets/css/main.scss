@@ -44,14 +44,57 @@ body {
     }
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+
+//MASTHEAD STYLING
+.masthead {
+    border-bottom: none;
+}
+
+// FOOTER STYLING
+#footer {
+    background-color: transparent;
+
+    .page__footer-copyright {
+        color: black;
+        margin-top: 0;
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+}
+
 
 // HOMEPAGE STYLING
 .layout--kendra_home {
     .masthead {
         background-color: transparent;
         position: absolute;
-        border-bottom: none;
         width: 100%;
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0;
     }
     
     #site-nav {
@@ -61,88 +104,259 @@ body {
 
 // PROJECTS PAGE STYLING
 .layout--kendra_projects {
-    .project {
-        float: left;
-        position: relative;
-        // padding-bottom: 56.25%;
-        max-width: 50%;
-        height: auto;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
 
-        .project-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @include breakpoint($medium) {
-            width: 50%;
-        }
-        @include breakpoint($large) {
-            width: 33.333%;
-        }
-
-        &::after {
-            content: "";
-            display: block;
-            padding-bottom: 75%;
-        }
+    @include breakpoint($medium) {
+      grid-template-columns: repeat(3, 33.333%);
     }
+  }
+
+  .hover-container {
+    height: 50vh;
+    object-fit: cover;
+    padding: 20px;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project {
+      float: left;
+      position: relative;
+      // padding-bottom: 56.25%;
+      max-width: 50%;
+      height: auto;
+      padding: 25px;
+      display: grid;
+
+      .project-image {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          padding: 15%;
+      }
+
+      @include breakpoint($small) {
+          width: 50%;
+      }
+      @include breakpoint($large) {
+          width: 33.333%;
+      }
+
+      &::after {
+          content: "";
+          display: block;
+          padding-bottom: 75%;
+      }
+  }
 }
 
 // PROJECT PAGE STYLING
 .layout--kendra_project {
     .project-images {
-      margin: 0;
-      padding: 0;
+      padding: 50px;
       display: flex;
-      flex-direction: row;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      float: left;
+      width: 100%;
+    }
+
+    .content {
+      width: 100%;
+      max-width: none;
+    }
+
+    .project-image.hover-container {
+      padding: 0 50px;
+    }
+
+    .project-description-container {
+        height: 100%;
+        right: 0;
+        top: 0;
+        padding: 1em;
+        background-color: #2fb5bf;
+
+        -moz-opacity:.80;
+        filter:alpha(opacity=80);
+        opacity:.85;
+        z-index: 10000000;
+
+        --webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        p {
+            padding-bottom: 25px;
+        }
+
+        p.project-title {
+            padding-bottom: 0;
+        }
+
+        @include breakpoint($medium) {
+          position: fixed;
+          max-width: 20vw;
+          padding: 100px 25px;
+        }
+    }
+    .project-title, .project-year {
+        font-weight: 500;
     }
 
     .project-image {
-        height: 85vh;
+        max-height: 100vh;
+        max-width: 100vw;
         width: auto;
-        overflow: scroll;
+        height: auto;
         float: left;
         scroll-snap-align: none center;
         flex: 0 0 auto;
-        padding: 50px;
+        padding: 0;
+
+        &:last-child {
+            padding-right: 33vw;
+        }
+
+
+        @include breakpoint($medium) {
+          height: 75vh;
+          max-height: 75vh;
+          max-width: none;
+        }
     }
 }
 
 
 // UTILS STYLING
-.hover-container {
-  position: relative;
-
-  &:hover {
-    .hover-overlay {
-        opacity: 1;
-        background: $hover-overlay-color;
-        transition: background $fade-in-length ease-in;
-        transition: opacity $fade-in-length ease-in;
-    }
-  }
+ 
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  box-sizing: border-box;
 }
-
-.hover-overlay {
+ 
+body{
+  background: #f9f9f9;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+ 
+.main-title{
+  color: #2d2d2d;
+  text-align: center;
+  padding: 0.7em 0;
+}
+ 
+// .container{
+//   padding: 1em 0;
+//   float: left;
+//   width: 50%;
+// }
+ 
+.hover-container .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+ 
+.content {
+  position: relative;
+  // width: 90%;
+  // max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+ 
+.content .image-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+ 
+.content:hover .image-overlay{
+  opacity: 1;
+}
+ 
+.content-image{
+  width: 100%;
+}
+ 
+.content-details {
   position: absolute;
   text-align: center;
-  opacity: 0;
-  background-color: none;
-  font-size: $normal-font-size;
-
-  transition: background $fade-in-length ease-out;
-  transition: opacity $fade-in-length ease-out;
-
+  padding-left: 1em;
+  padding-right: 1em;
   width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+ 
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+ 
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+ 
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+ 
+.fadeIn-bottom{
+  top: 80%;
+}
+ 
+// @media screen and (max-width: 640px){
+//   .container{
+//     display: block;
+//     width: 100%;
+//   }
+// }
+ 
+// @media screen and (min-width: 900px){
+//   .container{
+//     width: 33.33333%;
+//   }
+// }
 
-  p {
-    top: 33.33%;
-    color: white;
-    text-align: center;
-    width: 100%;
-  }
+// STYLING FOR JS EFFECTS
+.fade-in-scroll {
+    opacity: 0;
 }

@@ -12,6 +12,7 @@ $fade-in-length: .5s;
 $hover-overlay-color: rgba(0, 0, 0, 0.75);
 $hover-overlay-text: #ffffff;
 $normal-font-size: 16px;
+$masthead-links-hover-color: teal;
 
 // SITE WIDE STYLING
 body {
@@ -44,6 +45,12 @@ body {
     }
 }
 
+.initial-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: black white;
@@ -65,7 +72,57 @@ body {
 
 //MASTHEAD STYLING
 .masthead {
-    border-bottom: none;
+  border-bottom: none;
+
+  .greedy-nav .visible-links a {
+    &:before {
+      top: 50%;
+      bottom: 50%;
+      height: 3px;
+      background: teal;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .masthead__inner-wrap {
+    padding: 20px;
+  }
+
+  .greedy-nav a.site-title {
+    position: relative;
+
+    &:before {
+      top: 50%;
+      bottom: 50%;
+      height: 3px;
+      background: teal;
+     
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-transform: scaleX(0) translate3d(0, 0, 0);
+      transform: scaleX(0) translate3d(0, 0, 0);
+      
+      &:hover {
+        text-decoration: none;
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+  .navicon {
+    background: $masthead-links-hover-color;
+    &:before, &:after {
+      background: $masthead-links-hover-color;
+    }
+  }
 }
 
 // FOOTER STYLING
@@ -162,15 +219,38 @@ body {
   }
 }
 
+// PROJECT VARIABLES 
+.exodus-unseen {
+  background-color: teal;
+}
+.one-piece-wonder {
+  background-color: red;
+
+}
+.mellow-yellow {
+  background-color: yellow;
+
+}
+.gestural-symmetry {
+  background-color: blue;
+
+}
+.journey-lines {
+  background-color: pink;
+}
+    
 // PROJECT PAGE STYLING
 .layout--kendra_project {
     .project-images {
-      padding: 50px;
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       float: left;
       width: 100%;
+      
+      @include breakpoint($medium) {
+        padding: 50px;
+      }
     }
 
     .content {
@@ -179,15 +259,37 @@ body {
     }
 
     .project-image.hover-container {
-      padding: 0 50px;
+      padding: 0;
+      text-align: center;
+
+      @include breakpoint($medium) {
+        padding: 0 50px;
+        
+        &:last-child {
+          padding-right: 33vw;
+        }
+      }
     }
 
+    .image-description {
+      padding: 0  25px;
+
+      @include breakpoint($medium) {
+        padding: 0;
+      }
+    }
+
+    .encaustic-experimentation {
+      background-color: teal;
+
+    }
     .project-description-container {
         height: 100%;
         right: 0;
         top: 0;
         padding: 1em;
-        background-color: #2fb5bf;
+        // background-color: #2fb5bf;
+        // background-color: {{ site.data.project-color }}
 
         -moz-opacity:.80;
         filter:alpha(opacity=80);
@@ -196,13 +298,6 @@ body {
 
         --webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
-        p {
-            padding-bottom: 25px;
-        }
-
-        p.project-title {
-            padding-bottom: 0;
-        }
 
         @include breakpoint($medium) {
           position: fixed;
@@ -215,24 +310,24 @@ body {
     }
 
     .project-image {
-        max-height: 100vh;
-        max-width: 100vw;
-        width: auto;
-        height: auto;
-        float: left;
+        // float: left;
         scroll-snap-align: none center;
         flex: 0 0 auto;
-        padding: 0;
-
-        &:last-child {
-            padding-right: 33vw;
-        }
-
+        padding: 25px;
+        width: 100vw;
 
         @include breakpoint($medium) {
           height: 75vh;
+          width: auto;
           max-height: 75vh;
           max-width: none;
+          padding: 0;
+          max-height: 100vh;
+
+          // &:last-child {
+          //     padding-right: 33vw;
+          // }
+
         }
     }
 }

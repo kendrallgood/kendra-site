@@ -4,7 +4,7 @@ layout: kendra_default_no_footer
 {% for project in site.data.projects.projects %}
   {% if project.title == page.title %}
     <div class="project">
-      <div class="project-description-container">
+      <div class="project-description-container {{ project.class }}">
         <p class="project-title">
           {{ project.title }}
         </p>
@@ -30,13 +30,33 @@ layout: kendra_default_no_footer
         {% for image_url in project.images %}
             <div class="hover-container project-image">
               <div class="content">
-                <div class="image-overlay"></div>
-                <img id="{{ image_url.url }}" class="project-image content-image" src="{{ site.baseurl }}/{{ image_url.url }}">
-                <div class="content-details fadeIn-bottom">
+                <!-- <div class="image-overlay"></div> -->
+                <!-- <img id="{{ image_url.url }}" class="project-image content-image" src="{{ site.baseurl }}/{{ image_url.url }}"> -->
+
+              
+                <!-- {% if image_url.description %}
+                  <div class="image-description">
+                    {{ image_url.description }}
+                  </div>
+                {% endif %} -->
+                <img id="{{ image_url.url }}" class="project-image content-image" src="{{ image_url.url }}">
+                
+
+                <!-- <div class="content-details fadeIn-bottom">
                   <h3 class="content-title">{{ image_url.description }}</h3>
-                </div>
+
+                </div> -->
               </div>
+              
+              {% if image_url.description %}
+                <figcaption class="image-description">{{ image_url.description }}</figcaption>
+                <!-- <div class="image-description">
+                  {{ image_url.description }}
+                </div> -->
+              {% endif %}
+
             </div>
+
         {% endfor %}
       </div>
     </div>  

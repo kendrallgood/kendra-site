@@ -1,6 +1,7 @@
 projects:
   - title: "Exodus Unseen"
     project_url: "/exodus-unseen"
+    class: "exodus-unseen"
     year: "2018"
     spotlight_image_url: "/assets/images/projects/exodus/04a04eb1-5e87-4a66-aa5d-c981b457a207_rw_3840.jpg"
     images:
@@ -16,12 +17,13 @@ projects:
   - title: "One Piece Wonder"
     year: "2017"
     project_url: "/one-piece-wonder"
+    class: "one-piece-wonder"
     description: "Whole garment sweater and pants knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software, then linked together using a linking machine. Design on back and legs printed on Shima Seiki SIP-160F3 flatbed inkjet printer with reactive ink."
     spotlight_image_url: "/assets/images/projects/one-piece/4b81d035-f71f-471e-bf86-772445532b8d_rw_1920.jpg"
     images:
       - url: "/assets/images/projects/one-piece/4b81d035-f71f-471e-bf86-772445532b8d_rw_1920.jpg"
       - url: "/assets/images/projects/one-piece/5f5bb7df-d3cb-49ae-83e4-0e1f40dcafa7_rw_1920.jpg"
-      - url: "/assets/images/projects/one-piece/78c9e9c8-7e84-4757-b55f-10759817e085_rw_1200.jpg"
+      - url: "/assets/images/projects/one-piece/78c9e9c8-7e84-4757-b55f-10759817e085_rw_1200.png"
       - url: "/assets/images/projects/one-piece/87090a62-1fbf-4b1d-88ee-e079c4d286bf_rw_1200.jpg"
       - url: "/assets/images/projects/one-piece/a3057e45-74a7-4779-85ce-949c685d8f27_rw_1920.jpg"
       - url: "/assets/images/projects/one-piece/c2288a39-6431-41e3-a194-c3a9b8c7479e_rw_1920.jpg"
@@ -30,6 +32,7 @@ projects:
   - title: "Mellow Yellow"
     year: "2017"
     project_url: "/mellow-yellow"
+    class: "mellow-yellow"
     description: "Whole garment knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software. Yarn; 3-Ply, 8/1 MT 100% COTTON, 20/1 100% COTTON, 18/1 100% COTTON, Dyed using direct dyes. Dyed twice for more rich golden color"
     spotlight_image_url: "/assets/images/projects/mellow/2eb01e73-1d73-474a-9605-e2aa22478b26_rw_3840.jpg"
     images:
@@ -40,6 +43,7 @@ projects:
   - title: Gestural Symmetry
     year: 2015
     project_url: "/gestural-symmetry"
+    class: "gestural-symmetry"
     description: >-
       "This garment was made in collaboration with Eleanor Yeh inspired by MC Escher. The pattern pieces were engineered in order for the textile design to fit perfectly together. It was printed on the Mutoh MC3 Digital Textile Printer onto fabric and sewn together."
     spotlight_image_url: "/assets/images/projects/gestural/3cbf983814709a07dd66458e_rw_1920.png"
@@ -51,6 +55,7 @@ projects:
       - url: "/assets/images/projects/gestural/cf45171ac61f68242e5a90f5_rw_1920.jpg"
   - title: Journey Lines
     project_url: "/journey-lines"
+    class: "journey-lines"
     year: 2017
     spotlight_image_url: "/assets/images/projects/journey/26f6481cdeffd65419ab55ae_rw_1200.jpg"
     images:
@@ -77,6 +82,7 @@ projects:
   - title: Encaustic Experimentation
     year: 2016
     project_url: "/encaustic-experimentation"
+    class: "encaustic-experimentation"
     description: "Candle wax, pen and ink"    
     spotlight_image_url: "/assets/images/projects/encaustic/001d77d2a9f573b2b47f9c6b_rw_1920.jpg"
     images:

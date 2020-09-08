@@ -16,34 +16,34 @@ $masthead-links-hover-color: teal;
 
 // SITE WIDE STYLING
 body {
-    font-weight: 250 !important;
-    scroll-behavior: smooth;
-
-    a {
-        font-weight: 250 !important
-    }
-
-    h1, h2, h3 {
-        letter-spacing: 1.5px;
-    }
-
-    h1 {
-        font-weight: 550;
-        font-size: 35px;
-        font-style: italic;
-    }
-
-    h2 {
-        font-weight: 400;
-        font-size: 28px;
-        font-style: italic;
-    }
-
-    h3 {
-        font-weight: 500;
-        font-size: 16px;
-    }
+  font-weight: 250 !important;
+  scroll-behavior: smooth;
 }
+a {
+  font-weight: 250 !important
+}
+
+h1, h2, h3 {
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  font-weight: 550;
+  font-size: 35px;
+  font-style: italic;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 28px;
+  font-style: italic;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 16px;
+}
+// }
 
 .initial-content {
   max-width: 1280px;
@@ -306,9 +306,18 @@ body {
         }
     }
     .project-title, .project-year {
-        font-weight: 500;
+      font-weight: 500;
+      letter-spacing: .05em;
     }
-
+    .project-description {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-font-smoothing: antialiased !important;
+      text-rendering: optimizelegibility !important;
+      letter-spacing: .03em;
+      font-weight: 390;
+      line-height: 1.5em;
+    }
     .project-image {
         // float: left;
         scroll-snap-align: none center;
@@ -330,6 +339,44 @@ body {
 
         }
     }
+}
+// RESUME STYLING
+.layout--kendra_resume {
+  h2 {
+    margin: 0;
+    font-weight: 250;
+    font-style: normal;
+  }
+
+  .initial-content {
+    padding: 20px;
+    @include breakpoint($medium) {
+      margin: 0 auto;
+      width: 65%;
+    }
+  }
+  .resume-container {
+    margin-bottom: 10px;
+    line-height: 2.5em;
+  }
+  .resume-iframe {
+    display: block;
+    width: 100%;
+    min-height: 75vh;
+
+    @include breakpoint($medium) {
+      min-height: 75vh;
+    }
+  }
+
+  .dl-link {
+    color: black;
+  }
+
+  div.resumes > div.resume:not(:last-child)
+  { 
+    padding-bottom: 2em;
+  }
 }
 
 

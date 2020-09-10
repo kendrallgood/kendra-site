@@ -41,7 +41,7 @@ sass:
 # Site Footer
 footer:
   links:
-    - label: "Instagram"
+    - label: ""
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/kendrallgood"
 

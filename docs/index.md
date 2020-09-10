@@ -4,19 +4,12 @@
 
 layout: kendra_home
 title: Kendra Allgood
-preview_collection_1: "Exodus Unseen"
-preview_collection_2: "One Piece Wonder"
 ---
 <!-- <script type="module" src="./assets/js/fabric.js"></script> -->
 <script type="module">
 /*
  * Cloth Simulation using a relaxed constraints solver
  */
-
-// import * as THREE from './three.module.js';
-// import Stats from './stats.module.js';
-// import { GUI } from './dat.gui.module.js';
-// import { OrbitControls } from './OrbitControls.js';
 
 import * as THREE from './assets/js/three.module.js';
 import Stats from './assets/js/stats.module.js';
@@ -25,7 +18,7 @@ import { OrbitControls } from './assets/js/OrbitControls.js';
 var params = {
     enableWind: true,
     showBall: true,
-    togglePins: togglePins
+    // togglePins: togglePins
 };
 
 var DAMPING = 0.03;
@@ -34,8 +27,11 @@ var DRAG = 1 - DAMPING;
 var MASS = 0.91;
 var restDistance = 60;
 
-var xSegs = window.innerWidth / 2;
-var ySegs = 50;
+// var xSegs = window.innerWidth / 2;
+// var ySegs = 50;
+
+var xSegs = 30;
+var ySegs = 20;
 
 var clothFunction = plane( restDistance * xSegs, restDistance * ySegs );
 
@@ -54,7 +50,7 @@ var pins = [];
 var windForce = new THREE.Vector3( 0, 0, 0 );
 
 var ballPosition = new THREE.Vector3( 0, - 45, 0 );
-var ballSize = window.innerHeight / 2;
+var ballSize = window.innerHeight / 10;
 
 var tmpForce = new THREE.Vector3();
 
@@ -290,7 +286,7 @@ function simulate( now ) {
     if ( params.showBall ) {
 
         // find intersections
-        sphere.visible = true;
+        sphere.visible = false;
 
         raycaster.setFromCamera( mouse, camera );
 
@@ -333,16 +329,12 @@ function simulate( now ) {
         pos = particle.position;
         
         if ( pos.y < floorPosition ) {
-
-            pos.y = floorPosition;
-
+            // pos.y = floorPosition;
         } else {
             if (pos.y > ceilingPosition) {
-                pos.y = ceilingPosition;
+                // pos.y = ceilingPosition;
             }
         }
-
-
     }
 
     // Pin Constraints
@@ -362,7 +354,7 @@ function simulate( now ) {
 /* testing cloth simulation */
 
 var pinsFormation = [];
-var pins = [ 6 ];
+var pins = [ 0 ];
 
 pinsFormation.push( pins );
 
@@ -378,15 +370,17 @@ pinsFormation.push( pins );
 pins = [ 0, cloth.w ]; // classic 2 pins
 pinsFormation.push( pins );
 
-pins = pinsFormation[ 3 ];
+// pins = pinsFormation[ 3 ];
+pins = [ 0, cloth.h, cloth.w ];
+console.log(pins);
 
-function togglePins() {
+// function togglePins() {
 
-    pins = pinsFormation[ ~ ~ ( Math.random() * pinsFormation.length ) ];
+//     pins = pinsFormation[ ~ ~ ( Math.random() * pinsFormation.length ) ];
 
-}
+// }
 
-// var container, stats;
+var container, stats;
 var container;
 var camera, scene, renderer;
 
@@ -411,7 +405,8 @@ function init() {
     // camera
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 10000 );
     // camera.position.set( 1000, 50, 1500 );
-    camera.position.set( 0, 0, -2700 );
+    camera.position.set( 200, 900, 2000 );
+    // x: 201.21656221334072, y: 909.328513842752, z: 1993.845696252871
 
     // lights
     // scene.add( new THREE.AmbientLight( 0x666666 ) );
@@ -419,7 +414,7 @@ function init() {
     light.position.set( 50, 200, 100 );
     light.position.multiplyScalar( 1.3 );
 
-    light.castShadow = true;
+    light.castShadow = false;
 
     light.shadow.mapSize.width = 1024;
     light.shadow.mapSize.height = 1024;
@@ -437,7 +432,7 @@ function init() {
 
     // cloth material
     var clothTexture = loader.load(clothPath);
-    clothTexture.anisotropy = 16;
+    clothTexture.anisotropy = 1;
 
     var normalMap = loader.load(clothPathNormalMap);
 
@@ -450,12 +445,12 @@ function init() {
     clothMaterial.map.wrapS = clothMaterial.map.wrapT = THREE.RepeatWrapping;
 
     // Now we only need to set a new map.repeat
-    clothMaterial.map.repeat.set( 10, 10 );
+    clothMaterial.map.repeat.set( 1, 1 );
 
     clothMaterial.normalMap = normalMap;
 
     clothMaterial.normalMap.wrapS = clothMaterial.normalMap.wrapT = THREE.ClampToEdgeWrapping;
-    clothMaterial.normalMap.repeat.set( 10, 10 );
+    clothMaterial.normalMap.repeat.set( 1, 1 );
     
     // cloth geometry
     clothGeometry = new THREE.ParametricBufferGeometry( clothFunction, cloth.w, cloth.h );
@@ -481,7 +476,7 @@ function init() {
     sphere = new THREE.Mesh( ballGeo, ballMaterial );
     sphere.castShadow = false;
     sphere.receiveShadow = false;
-    sphere.visible = true;
+    sphere.visible = false;
     scene.add( sphere );
 
     // ground
@@ -566,8 +561,8 @@ function init() {
 
     // performance monitor
 
-    // stats = new Stats();
-    // container.appendChild( stats.dom );
+    stats = new Stats();
+    container.appendChild( stats.dom );
 
     window.addEventListener( 'resize', onWindowResize, false );
 
@@ -625,6 +620,7 @@ function onDocumentMouseDown( event ) {
     event.preventDefault();
 
     mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+    console.log(camera.position);
 }
 
 
@@ -642,7 +638,7 @@ function animate( now ) {
     requestAnimationFrame( animate );
     simulate( now );
     render();
-    // stats.update();
+    stats.update();
 
 }
 

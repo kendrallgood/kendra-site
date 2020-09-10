@@ -43,7 +43,6 @@ h3 {
   font-weight: 500;
   font-size: 16px;
 }
-// }
 
 .initial-content {
   max-width: 1280px;
@@ -91,7 +90,7 @@ h3 {
     padding: 20px;
   }
 
-  .greedy-nav a.site-title {
+  a.site-title {
     position: relative;
 
     &:before {
@@ -108,15 +107,17 @@ h3 {
       transition: all 0.2s ease-in-out;
       -webkit-transform: scaleX(0) translate3d(0, 0, 0);
       transform: scaleX(0) translate3d(0, 0, 0);
-      
-      &:hover {
-        text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+      &:before {
         -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
         transform: scaleX(1);
       }
     }
   }
+
   .navicon {
     background: $masthead-links-hover-color;
     &:before, &:after {
@@ -127,17 +128,21 @@ h3 {
 
 // FOOTER STYLING
 #footer {
-    background-color: transparent;
+  background-color: transparent;
 
-    .page__footer-copyright {
-        color: black;
-        margin-top: 0;
-    }
+  .page__footer-copyright {
+      color: black;
+      margin-top: 0;
+  }
 
-    a:hover {
-        color: black;
-        text-decoration: none;
+  a {
+    color: black;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
     }
+  }
 }
 
 
@@ -157,6 +162,10 @@ h3 {
     #site-nav {
         background-color: transparent;
     }
+
+    .initial-content {
+      max-width: none;
+    }
 }
 
 // PROJECTS PAGE STYLING
@@ -171,9 +180,12 @@ h3 {
   }
 
   .hover-container {
-    height: 50vh;
+    height: 33vh;
     object-fit: cover;
     padding: 20px;
+    @include breakpoint($medium) {
+      height: 50vh;
+    }
   }
 
   .content {
@@ -187,6 +199,9 @@ h3 {
     object-fit: cover;
   }
 
+  h3 {
+    font-size: 16px;
+  }
   .project {
       float: left;
       position: relative;
@@ -253,13 +268,40 @@ h3 {
       }
     }
 
+    .initial-content {
+      max-width: none;
+    }
     .content {
       width: 100%;
       max-width: none;
+      // display: inline;
+
+      // top: 50%;
+      // -ms-transform: translateY(-50%);
+      // transform: translateY(-50%);
+      // @include breakpoint($medium) {
+      //   top: unset;
+      //   -ms-transform: translateY(0%);
+      //   transform: translateY(0%);
+      // }
+    }
+
+    figcaption {
+      // top: 50%;
+      // position: relative;
+      // -ms-transform: translateY(-50%);
+      // transform: translateY(-50%);
+      // @include breakpoint($medium) {
+      //   position: initial;
+      //   top: unset;
+      //   -ms-transform: translateY(0%);
+      //   transform: translateY(0%);
+      // }
     }
 
     .project-image.hover-container {
       padding: 0;
+      position: relative;
       text-align: center;
 
       @include breakpoint($medium) {
@@ -287,7 +329,7 @@ h3 {
         height: 100%;
         right: 0;
         top: 0;
-        padding: 1em;
+        padding: 20px;
         // background-color: #2fb5bf;
         // background-color: {{ site.data.project-color }}
 

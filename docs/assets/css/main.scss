@@ -1,7 +1,6 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
@@ -69,16 +68,27 @@ h3 {
 }
 
 
+@font-face {
+	// font-family: F16;
+	font-family: 'Orator';
+	src: url(/OratorS0.otf) format('opentype');
+	font-weight: bold;
+	font-style: normal;
+}
+
 //MASTHEAD STYLING
 .masthead {
   border-bottom: none;
 
   .greedy-nav .visible-links a {
+  	padding: 0 10px;
+  	margin: 0;
     &:before {
-      top: 50%;
-      bottom: 50%;
-      height: 3px;
+      top: 35%;
+      // bottom: 50%;
+      height: 2px;
       background: teal;
+      z-index: -1;
     }
 
     &:hover {
@@ -87,17 +97,21 @@ h3 {
   }
 
   .masthead__inner-wrap {
+  	font-family: 'Orator', sans-serif;
     padding: 20px;
+    font-size: 20px;
   }
 
   a.site-title {
     position: relative;
+    padding: 0 10px;
 
     &:before {
-      top: 50%;
-      bottom: 50%;
-      height: 3px;
+      top: 35%;
+      // bottom: 50%;
+      height: 2px;
       background: teal;
+      z-index: -1;
      
       content: "";
       position: absolute;
@@ -110,6 +124,7 @@ h3 {
     }
     &:hover {
       text-decoration: none;
+
       &:before {
         -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
@@ -183,6 +198,7 @@ h3 {
     height: 33vh;
     object-fit: cover;
     padding: 20px;
+
     @include breakpoint($medium) {
       height: 50vh;
     }
@@ -268,6 +284,10 @@ h3 {
       }
     }
 
+    ul.visible-links {
+    	padding-right: 15vw;
+    }
+
     .initial-content {
       max-width: none;
     }
@@ -287,6 +307,7 @@ h3 {
     }
 
     figcaption {
+    	font-family: Orator;
       // top: 50%;
       // position: relative;
       // -ms-transform: translateY(-50%);
@@ -343,12 +364,13 @@ h3 {
 
         @include breakpoint($medium) {
           position: fixed;
-          max-width: 20vw;
+          width: 20vw;
           padding: 100px 25px;
         }
     }
-    .project-title, .project-year {
-      font-weight: 500;
+    .project-title {
+      font-weight: 250;
+      font-size: 18px;
       letter-spacing: .05em;
     }
     .project-description {
@@ -502,6 +524,11 @@ body{
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
+
+  color: #fff;
+  font-weight: 250;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
 }
  
 .content:hover .content-details{
@@ -510,18 +537,16 @@ body{
   opacity: 1;
 }
  
-.content-details h3{
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
+.content-details h3 {
+//   color: #fff;
+  font-weight: 250;
+//   letter-spacing: 0.15em;
+//   margin-bottom: 0.5em;
 }
  
-.content-details p{
-  color: #fff;
-  font-size: 0.8em;
-}
+// .content-details p{
+//   color: #fff;
+// }
  
 .fadeIn-bottom{
   top: 80%;

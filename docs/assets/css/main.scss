@@ -65,7 +65,7 @@ h3 {
 
 
 @font-face {
-    font-family: 'Orator2';
+    font-family: 'Orator';
     src: url(OratorS0.otf) format('opentype');
     font-weight: bold;
     font-style: normal;
@@ -246,7 +246,7 @@ h3 {
     }
 
     .image-description {
-        font-family: Orator2;
+        font-family: 'Orator', sans-serif;
         text-align: center;
         padding: 0 25px;
         width: 50%;
@@ -363,7 +363,7 @@ h3 {
 
 // UTILS STYLING
 .kendra-link {
-    font-family: 'Orator2';
+    font-family: 'Orator', sans-serif;
     padding: 20px;
     font-size: 20px;
     padding: 0 10px;

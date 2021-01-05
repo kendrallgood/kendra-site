@@ -3,6 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: kendra_project
-title: Encaustic Experimentation - Hi
+title: Encaustic Experimentation
 permalink: /encaustic-experimentation/
 ---

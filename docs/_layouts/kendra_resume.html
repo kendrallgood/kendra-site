@@ -2,10 +2,9 @@
 layout: kendra_default
 ---
 <div class="resume-container">
-	<h2>Resume</h2> 
+	<h2>{{ page.title }}</h2> 
 	<a class="dl-link" href="{{ site.baseurl }}/{{ page.resume_url }}" download>
-	  [Download]
+	  {{ page.download_button_text }}
 	</a>
+	 <embed class="resume-object" src="{{ site.baseurl }}/{{ page.resume_url }}#view=FitH">
 </div>
-<iframe class="resume-iframe" src="{{ site.baseurl }}/{{ page.resume_url }}#toolbar=0">
-</iframe>

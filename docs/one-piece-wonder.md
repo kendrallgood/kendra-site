@@ -5,4 +5,6 @@
 layout: kendra_project
 title: One Piece Wonder
 permalink: /one-piece-wonder/
+project_description_color: black
+project_description_text_color: white
 ---

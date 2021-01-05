@@ -12,7 +12,7 @@ title: Kendra Allgood
  */
 
 import * as THREE from './assets/js/three.module.js';
-import Stats from './assets/js/stats.module.js';
+// import Stats from './assets/js/stats.module.js';
 import { GUI } from './assets/js/dat.gui.module.js';
 import { OrbitControls } from './assets/js/OrbitControls.js';
 var params = {
@@ -59,6 +59,8 @@ var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 var clothPath = 'assets/images/textures/memphis_72_ppi_4_rpt.jpg';
 var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_normal.jpg';
+
+var clothPathNormalMap = 'assets/images/textures/memphis_72_ppi_4_rpt_norm_4.jpg';
 var floorPosition = - window.innerHeight / 2;
 var ceilingPosition = window.innerHeight / 2 + window.innerHeight;
 
@@ -380,7 +382,7 @@ console.log(pins);
 
 // }
 
-var container, stats;
+// var container, stats;
 var container;
 var camera, scene, renderer;
 
@@ -409,7 +411,7 @@ function init() {
     // x: 201.21656221334072, y: 909.328513842752, z: 1993.845696252871
 
     // lights
-    // scene.add( new THREE.AmbientLight( 0x666666 ) );
+    scene.add( new THREE.AmbientLight( 0x666666 ) );
     var light = new THREE.DirectionalLight( 0xdfebff, 1 );
     light.position.set( 50, 200, 100 );
     light.position.multiplyScalar( 1.3 );
@@ -561,8 +563,8 @@ function init() {
 
     // performance monitor
 
-    stats = new Stats();
-    container.appendChild( stats.dom );
+    // stats = new Stats();
+    // container.appendChild( stats.dom );
 
     window.addEventListener( 'resize', onWindowResize, false );
 
@@ -638,7 +640,7 @@ function animate( now ) {
     requestAnimationFrame( animate );
     simulate( now );
     render();
-    stats.update();
+    // stats.update();
 
 }
 

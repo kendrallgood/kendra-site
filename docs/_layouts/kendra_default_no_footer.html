@@ -27,8 +27,13 @@
         {% include_cached search/search_form.html %}
       </div>
     {% endif %}
-
+    
     {% include scripts.html %}
-
+    
+    {% if layout.after_scripts %}
+      {% for script in layout.after_scripts %}
+        <script src="{{ script | relative_url }}"></script>
+      {% endfor %}
+    {% endif %}
   </body>
 </html>

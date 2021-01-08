@@ -5,6 +5,5 @@
 layout: kendra_project
 title: Gestural Symmetry
 permalink: /gestural-symmetry/
-project_description_color: black
-project_description_text_color: white
+project_description_text_color: black
 ---

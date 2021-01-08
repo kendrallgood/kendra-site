@@ -204,17 +204,6 @@ h3 {
 // PROJECT PAGE STYLING
 .layout--kendra_project {
 
-    .back-button {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 1em;
-    }
-
-    .back-link {
-        color: black !important;
-        padding: 0 10px;
-    }
-
     .project-images {
         max-height: 100vh;
     }
@@ -235,6 +224,9 @@ h3 {
         right: 0;
         position: unset;
         display: inline;
+        &:before {
+          color: black;
+        }
     }
     .slick-prev {
         float: left;
@@ -246,7 +238,8 @@ h3 {
     }
 
     .image-description {
-        font-family: 'Orator', sans-serif;
+        // font-family: 'Orator', sans-serif;
+        font-family: sans-serif;
         text-align: center;
         padding: 0 25px;
         width: 50%;
@@ -293,6 +286,10 @@ h3 {
       letter-spacing: .03em;
       font-weight: 300;
       line-height: 1.5em;
+    }
+
+    .project-image-container {
+      padding: 50px;
     }
 
     .project-image {
@@ -350,10 +347,6 @@ h3 {
     }
   }
 
-  .dl-link {
-    color: black;
-  }
-
   div.resumes > div.resume:not(:last-child)
   { 
     padding-bottom: 2em;
@@ -362,15 +355,25 @@ h3 {
 
 
 // UTILS STYLING
+.dl-link {
+  color: black;
+
+  &:hover {
+    color: black;
+  }
+}
+
 .kendra-link {
-    font-family: 'Orator', sans-serif;
+    // font-family: 'Orator', sans-serif;
     padding: 20px;
     font-size: 20px;
     padding: 0 10px;
     margin: 0;
+    font-weight: 200;
 
     &:before {
-      top: 35%;
+      top: 50%;
+      bottom: 50%;
       height: 2px !important;
       background: teal !important;
       z-index: -1;
@@ -379,6 +382,9 @@ h3 {
     &:hover {
       text-decoration: none;
     }
+}
+a.kendra-link {
+  font-weight: 200 !important;
 }
 
 .site-title.kendra-link {

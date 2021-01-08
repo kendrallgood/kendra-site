@@ -1,8 +1,8 @@
 projects:
   - title: Exodus Unseen
     project_url: "/exodus-unseen"
-    class: "exodus-unseen"
     year: 2018
+    download_link: "/assets/images/projects/exodus/EXODUS UNSEEN.pdf"
     spotlight_image_url: "/assets/images/projects/exodus/04a04eb1-5e87-4a66-aa5d-c981b457a207_rw_3840.jpg"
     images:
       - url: "/assets/images/projects/exodus/04a04eb1-5e87-4a66-aa5d-c981b457a207_rw_3840.jpg"
@@ -17,7 +17,6 @@ projects:
   - title: One Piece Wonder
     year: 2017
     project_url: "/one-piece-wonder"
-    class: "one-piece-wonder"
     description: Whole garment sweater and pants knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software, then linked together using a linking machine. Design on back and legs printed on Shima Seiki SIP-160F3 flatbed inkjet printer with reactive ink.
     spotlight_image_url: "/assets/images/projects/one-piece/4b81d035-f71f-471e-bf86-772445532b8d_rw_1920.jpg"
     images:
@@ -29,21 +28,24 @@ projects:
       - url: "/assets/images/projects/one-piece/c2288a39-6431-41e3-a194-c3a9b8c7479e_rw_1920.jpg"
       - url: "/assets/images/projects/one-piece/c0477401-bcdc-4c1b-bfb6-406afbaac22a_rw_1920.jpg"
       - url: "/assets/images/projects/one-piece/e508c0cd-e443-45a1-97b3-6df38dd3ac91_rw_3840.jpg"
+      - url: "/assets/images/projects/one-piece/hancock-on-the-bench.jpg"
+      - url: "/assets/images/projects/one-piece/suicide-squad-margot-robbie-harley-quinn.jpg"
   - title: Mellow Yellow
     year: 2017
     project_url: "/mellow-yellow"
-    class: "mellow-yellow"
     description: Whole garment knitted on Shima Seiki Mach 2x 8 gauge machine using the Apex3 software. Yarn; 3-Ply, 8/1 MT 100% COTTON, 20/1 100% COTTON, 18/1 100% COTTON, Dyed using direct dyes. Dyed twice for more rich golden color
     spotlight_image_url: "/assets/images/projects/mellow/2eb01e73-1d73-474a-9605-e2aa22478b26_rw_3840.jpg"
     images:
       - url: "/assets/images/projects/mellow/2eb01e73-1d73-474a-9605-e2aa22478b26_rw_3840.jpg"
         description: Dyed once with direct dye, before second dye.
+      - url: "/assets/images/projects/mellow/2jacob yellow.png"
+      - url: "/assets/images/projects/mellow/3-kay-yellow-glitched-10-1-2017-10-35-05-PM.png"
       - url: "/assets/images/projects/mellow/1d3bf0bb-9fab-4238-bb37-7a65574b4d51_rw_3840.jpg"
       - url: "/assets/images/projects/mellow/599292ae-09df-4f5c-98d2-8a2cf0dea6b8_rw_3840.JPG"
+      - url: "/assets/images/projects/mellow/IMG_0918.JPG"
   - title: Gestural Symmetry
     year: 2015
     project_url: "/gestural-symmetry"
-    class: "gestural-symmetry"
     description: >-
       This garment was made in collaboration with Eleanor Yeh inspired by MC Escher. The pattern pieces were engineered in order for the textile design to fit perfectly together. It was printed on the Mutoh MC3 Digital Textile Printer onto fabric and sewn together.
     spotlight_image_url: "/assets/images/projects/gestural/3cbf983814709a07dd66458e_rw_1920.png"
@@ -54,9 +56,46 @@ projects:
       - url: "/assets/images/projects/gestural/9616926d2b65f62c5982423c_rw_1920.jpg"
         description: Ashley Maurice models final printed garment. Photos by Veritas Photography
       - url: "/assets/images/projects/gestural/cf45171ac61f68242e5a90f5_rw_1920.jpg"
+  - title: Booklet
+    project_url: "/booklet"
+    year: 2017
+    download_link: /assets/images/projects/booklet/GTA BOOK (1).pdf
+    spotlight_image_url: "/assets/images/projects/booklet/1 cover.jpg"
+    images:
+      - url: "/assets/images/projects/booklet/1 cover.jpg"
+      - url: "/assets/images/projects/booklet/2 bazaar.jpg"
+      - url: "/assets/images/projects/booklet/3 modern memphis.jpg"
+      - url: "/assets/images/projects/booklet/4 kaleidoscope.jpg"
+      - url: "/assets/images/projects/booklet/5 plexus.jpg"
+  - title: Cyclery
+    project_url: "/cyclery"
+    year: 2017
+    spotlight_image_url: "/assets/images/projects/cyclery/bike K N I T2 (1).png"
+    images:
+      - url: "/assets/images/projects/cyclery/bike K N I T2 (1).png"
+      - url: "/assets/images/projects/cyclery/bike logo.png"
+      - url: "/assets/images/projects/cyclery/bike N I T2 (1).png"
+      - url: "/assets/images/projects/cyclery/Kendra-Bike-Hoodies.gif"
+      - url: "/assets/images/projects/cyclery/small four kendras copy.png"
+  - title: Making Yarn
+    project_url: "/making-yarn"
+    year: 2017
+    spotlight_image_url: "/assets/images/projects/yarn/IMG_2424.jpg"
+    images:
+      - url: "/assets/images/projects/yarn/IMG_2424.jpg"
+      - url: "/assets/images/projects/yarn/IMG_2430.jpg"
+      - url: "/assets/images/projects/yarn/IMG_2492.m4v"
+        type: video
+      - url: "/assets/images/projects/yarn/IMG_2498.m4v"
+        type: video
+      - url: "/assets/images/projects/yarn/IMG_2503.jpg"
+      - url: "/assets/images/projects/yarn/IMG_2601.m4v"
+        type: video
+      - url: "/assets/images/projects/yarn/IMG_2602.m4v"
+        type: video
+      - url: "/assets/images/projects/yarn/IMG_2604.jpg"
   - title: Journey Lines
     project_url: "/journey-lines"
-    class: "journey-lines"
     year: 2017
     spotlight_image_url: "/assets/images/projects/journey/26f6481cdeffd65419ab55ae_rw_1200.jpg"
     images:

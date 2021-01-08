@@ -14,7 +14,7 @@ title: Kendra Allgood
 import * as THREE from './assets/js/three.module.js';
 // import Stats from './assets/js/stats.module.js';
 import { GUI } from './assets/js/dat.gui.module.js';
-import { OrbitControls } from './assets/js/OrbitControls.js';
+// import { OrbitControls } from './assets/js/OrbitControls.js';
 var params = {
     enableWind: true,
     showBall: true,
@@ -25,6 +25,7 @@ var DAMPING = 0.03;
 // var DAMPING = 0.01;
 var DRAG = 1 - DAMPING;
 var MASS = 0.91;
+// var restDistance = 60;
 var restDistance = 60;
 
 // var xSegs = window.innerWidth / 2;
@@ -42,7 +43,7 @@ var GRAVITY = 981 * 1.4;
 
 var gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 
-var TIMESTEP = 18 / 1000;
+var TIMESTEP = 18 / 1100;
 var TIMESTEP_SQ = TIMESTEP * TIMESTEP;
 
 var pins = [];
@@ -227,9 +228,9 @@ function Cloth( w, h ) {
 
 function simulate( now ) {
 
-    var windStrength = Math.cos( now / 7000 ) * 20 + 40;
+    var windStrength = Math.cos( now / 7000 ) * 400 + 40;
 
-    windForce.set( Math.sin( now / 2000 ), Math.cos( now / 3000 ), Math.sin( now / 1000 ) );
+    windForce.set( Math.sin( now / 20000 ), Math.cos( now / 30000 ), Math.sin( now / 10000 ) );
     windForce.normalize();
     windForce.multiplyScalar( windStrength );
 
@@ -246,9 +247,9 @@ function simulate( now ) {
 
         particles = cloth.particles;
 
-        for ( i = 0, il = indices.count; i < il; i += 3 ) {
+        for ( i = 0, il = indices.count; i < il; i += 6 ) {
 
-            for ( j = 0; j < 3; j ++ ) {
+            for ( j = 0; j < 6; j ++ ) {
 
                 indx = indices.getX( i + j );
                 normal.fromBufferAttribute( normals, indx );
@@ -308,13 +309,12 @@ function simulate( now ) {
                     // collided
                     diff.normalize().multiplyScalar( ballSize );
                     pos.copy( ballPosition ).add( diff );
-
                 }
 
             }
 
         } else {
-            sphere.scale.set(0, 0, 0);
+            // sphere.scale.set(0, 0, 0);
         }
 
 
@@ -374,7 +374,6 @@ pinsFormation.push( pins );
 
 // pins = pinsFormation[ 3 ];
 pins = [ 0, cloth.h, cloth.w ];
-console.log(pins);
 
 // function togglePins() {
 
@@ -407,7 +406,9 @@ function init() {
     // camera
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 10000 );
     // camera.position.set( 1000, 50, 1500 );
-    camera.position.set( 200, 900, 2000 );
+    camera.position.set( -100, 0, 2200 );
+
+    // camera.position.set( 0, 900, 2000 );
     // x: 201.21656221334072, y: 909.328513842752, z: 1993.845696252871
 
     // lights
@@ -556,10 +557,10 @@ function init() {
     renderer.shadowMap.enabled = true;
 
     // controls
-    var controls = new OrbitControls( camera, renderer.domElement );
-    controls.maxPolarAngle = Math.PI * 0.5;
-    controls.minDistance = 1000;
-    controls.maxDistance = 5000;
+    // var controls = new OrbitControls( camera, renderer.domElement );
+    // controls.maxPolarAngle = Math.PI * 0.5;
+    // controls.minDistance = 1000;
+    // controls.maxDistance = 5000;
 
     // performance monitor
 
@@ -587,7 +588,6 @@ function init() {
 
     document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-    document.addEventListener( 'mouseup', onDocumentMouseUp, false );
 }
 
 
@@ -598,15 +598,6 @@ function onWindowResize() {
 
     renderer.setSize( window.innerWidth, window.innerHeight );
 
-}
-
-function onDocumentClick( event ) {
-
-    event.preventDefault();
-
-    GRAVITY = GRAVITY * -1.0;
-
-    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
 }
 
 
@@ -622,18 +613,8 @@ function onDocumentMouseDown( event ) {
     event.preventDefault();
 
     mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
-    console.log(camera.position);
 }
 
-
-function onDocumentMouseUp( event ) {
-
-    event.preventDefault();
-
-    GRAVITY = GRAVITY * -1.0;
-
-    gravity = new THREE.Vector3( 0, - GRAVITY, 0 ).multiplyScalar( MASS );
-}
 
 function animate( now ) {
 

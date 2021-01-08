@@ -1,12 +1,6 @@
 ---
 ---
 <!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
     {% include head.html %}
@@ -32,7 +26,9 @@
     
     {% if layout.after_scripts %}
       {% for script in layout.after_scripts %}
-        <script src="{{ site.baseurl }}/{{ script }}"></script>
+      <!-- REMOTE VS LOCAL -->
+        <script src="{{ site.baseurl }}{{ script }}"></script>
+        <!-- <script src="/{{ script }}"></script> -->
       {% endfor %}
     {% endif %}
   </body>

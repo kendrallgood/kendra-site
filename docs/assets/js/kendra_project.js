@@ -6,8 +6,9 @@ $(document).ready(function(){
         variableWidth: true,
         arrows: true,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2500,
         accessibility: true,
+        pauseOnHover: true,
         appendArrows: $('.project-image-nav')
     });
 });

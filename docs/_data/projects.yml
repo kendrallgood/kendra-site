@@ -68,6 +68,7 @@ projects:
       - url: "/assets/images/projects/open-line/2 bazaar.jpg"
       - url: "/assets/images/projects/open-line/AK16140  Shibori  FULL (4 of 6).dng.jpg"
       - url: "/assets/images/projects/open-line/AK16141 Shibori close up.bmp"
+        description: A close up of the machine readable bitmap design file. The black and white represent the feeds allocated to the face of the fabric while the yellow is the tack down coming from the back of the fabric.
       - url: "/assets/images/projects/open-line/AK16140 Shibori CLR (4 of 8).jpg"
       - url: "/assets/images/projects/open-line/AK16464 Inari CLR (6 of 9).jpg"
       - url: "/assets/images/projects/open-line/shibori.jpg"

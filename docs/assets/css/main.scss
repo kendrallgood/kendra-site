@@ -75,7 +75,11 @@ h3 {
 .masthead {
     border-bottom: none;
 }
-
+.masthead__inner-wrap {
+  @include breakpoint($medium) {
+    // padding: 1em 0;
+  }
+}
 .navicon {
     background: $masthead-links-hover-color;
 
@@ -111,9 +115,16 @@ h3 {
   }
 }
 
-
 // HOMEPAGE STYLING
 .layout--kendra_home {
+    a.site-title.kendra-link {
+      &:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+
     .masthead {
         background-color: transparent;
         position: absolute;
@@ -136,6 +147,16 @@ h3 {
 
 // PROJECTS PAGE STYLING
 .layout--kendra_projects {
+  .kendra-nav-projects {
+    a.kendra-link {
+      &:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+
   .projects {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -148,7 +169,7 @@ h3 {
   .hover-container {
     height: 33vh;
     object-fit: cover;
-    padding: 20px;
+    padding: 1em;
 
     @include breakpoint($medium) {
       height: 50vh;
@@ -203,7 +224,6 @@ h3 {
     
 // PROJECT PAGE STYLING
 .layout--kendra_project {
-
     .project-images {
         max-height: 100vh;
     }
@@ -225,7 +245,7 @@ h3 {
         position: unset;
         display: inline;
         &:before {
-          color: black;
+          color: white;
         }
     }
     .slick-prev {
@@ -316,10 +336,14 @@ h3 {
 
 // RESUME STYLING
 .layout--kendra_resume {
-  h2 {
-    margin: 0;
-    font-weight: 250;
-    font-style: normal;
+  .kendra-nav-resume {
+    a.kendra-link {
+      &:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
   }
 
   .initial-content {
@@ -353,6 +377,42 @@ h3 {
   }
 }
 
+// ABOUT STYLING
+.layout--kendra_about {
+  .kendra-nav-about {
+    a.kendra-link {
+      &:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .initial-content{
+    padding: 10px;
+  }
+
+  .about-text-container {
+    padding: 10px;
+
+    @include breakpoint($medium) {
+      float: right;
+      width: 50%;
+    }
+  }
+
+  .image-container {
+    padding: 10px;
+
+    @include breakpoint($medium) {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
+
 
 // UTILS STYLING
 .dl-link {
@@ -363,13 +423,23 @@ h3 {
   }
 }
 
+h2.kendra-h2 {
+  margin: 0;
+  font-weight: 250;
+  font-style: normal;
+  font-size: 20px;
+}
+
 .kendra-link {
     // font-family: 'Orator', sans-serif;
     padding: 20px;
     font-size: 20px;
     padding: 0 10px;
     margin: 0;
-    font-weight: 200;
+    // font-weight: 200;
+    letter-spacing: 1.5px;
+    font-weight: 150 !important;
+    color: #333;
 
     &:before {
       top: 50%;
@@ -383,8 +453,12 @@ h3 {
       text-decoration: none;
     }
 }
+
 a.kendra-link {
-  font-weight: 200 !important;
+  // font-weight: 200 !important;
+    letter-spacing: 1.5px;
+    color: #333;
+    font-weight: 100 !important;
 }
 
 .site-title.kendra-link {

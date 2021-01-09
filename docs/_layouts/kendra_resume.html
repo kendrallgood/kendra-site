@@ -2,9 +2,8 @@
 layout: kendra_default
 ---
 <div class="resume-container">
-	<h2>{{ page.title }}</h2> 
-	<a class="dl-link" href="{{ site.baseurl }}/{{ page.resume_url }}" download>
+	<a class="dl-link" href="{{ site.baseurl }}{{ page.resume_url }}" download>
 	  {{ page.download_button_text }}
 	</a>
-	 <embed class="resume-object" src="{{ site.baseurl }}/{{ page.resume_url }}#view=FitH">
+	 <embed class="resume-object" src="{{ site.baseurl }}{{ page.resume_url }}#view=FitH">
 </div>

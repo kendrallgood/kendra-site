@@ -5,5 +5,6 @@
 layout: kendra_project
 title: Mellow Yellow
 permalink: /mellow-yellow/
-project_description_text_color: black
+project_description_text_color: white
+project_description_color: black
 ---

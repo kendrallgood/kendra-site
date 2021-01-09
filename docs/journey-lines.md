@@ -5,5 +5,6 @@
 layout: kendra_project
 title: Journey Lines
 permalink: /journey-lines/
-project_description_text_color: black
+project_description_text_color: white
+project_description_color: black
 ---

@@ -2,7 +2,7 @@ projects:
   - title: Kaleidoscope
     project_url: "/kaleidoscope"
     year: 2020
-    download_link: /assets/images/projects/kaleidoscope/Kaleido Development.pdf
+    download_link: "/assets/images/projects/kaleidoscope/Kaleido Development.pdf"
     spotlight_image_url: "/assets/images/projects/kaleidoscope/dude blanket close.jpg"
     images:
       - url: "/assets/images/projects/kaleidoscope/dude blanket close.jpg"
@@ -60,7 +60,7 @@ projects:
   - title: Open Line
     project_url: "/open-line"
     year: 2020
-    download_link: /assets/images/projects/open-line/GTA BOOK (1).pdf
+    download_link: "/assets/images/projects/open-line/GTA BOOK (1).pdf"
     spotlight_image_url: "/assets/images/projects/open-line/AK16140 Shibori CLR (4 of 8).jpg"
     images:
       - url: "/assets/images/projects/open-line/1 cover.jpg"

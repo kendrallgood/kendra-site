@@ -152,25 +152,25 @@ projects:
       - url: "/assets/images/projects/encaustic/548f100e24b95a2465c17bb9_rw_1920.jpg"
       - url: "/assets/images/projects/encaustic/8bba852c5640915062b64391_rw_1920.jpg"
       - url: "/assets/images/projects/encaustic/001d77d2a9f573b2b47f9c6b_rw_1920.jpg"
-  - title: Making Yarn
-    project_url: "/making-yarn"
-    year: 2017
-    description: I hand dyed raw sliver and was able to observe the process that cotton goes through to become sliver and then usable yarn in my yarn making class junior year of college.
-    spotlight_image_url: "/assets/images/projects/yarn/IMG_2604.jpg"
-    images:
-      - url: "/assets/images/projects/yarn/IMG_2604.jpg"
-      - url: "/assets/images/projects/yarn/IMG_2424.jpg"
-        description: Hand dyed sliver goes onto elevated drums before being fed into the drawing machine.
-      - url: "/assets/images/projects/yarn/IMG_2430.jpg"
-        description: Sliver is fed into drawing machine by yarn lab technician and made into roving and wound on packages.
-      - url: "/assets/images/projects/yarn/IMG_2492.m4v"
-        type: video
-        description: Packages of roving go onto the roving frame to be created into more fine roving and prepared for ring spinning process.
-      - url: "/assets/images/projects/yarn/IMG_2503.jpg"
-        description: Roving is placed on ring spinning machine and spun into approximately 20/1 cotton yarn.
-      - url: "/assets/images/projects/yarn/IMG_2601.m4v"
-        description: The package of yarn is transferred onto a cone for easier use while knitting.
-        type: video
+  # - title: Making Yarn
+  #   project_url: "/making-yarn"
+  #   year: 2017
+  #   description: I hand dyed raw sliver and was able to observe the process that cotton goes through to become sliver and then usable yarn in my yarn making class junior year of college.
+  #   spotlight_image_url: "/assets/images/projects/yarn/IMG_2604.jpg"
+  #   images:
+  #     - url: "/assets/images/projects/yarn/IMG_2604.jpg"
+  #     - url: "/assets/images/projects/yarn/IMG_2424.jpg"
+  #       description: Hand dyed sliver goes onto elevated drums before being fed into the drawing machine.
+  #     - url: "/assets/images/projects/yarn/IMG_2430.jpg"
+  #       description: Sliver is fed into drawing machine by yarn lab technician and made into roving and wound on packages.
+  #     - url: "/assets/images/projects/yarn/IMG_2492.m4v"
+  #       type: video
+  #       description: Packages of roving go onto the roving frame to be created into more fine roving and prepared for ring spinning process.
+  #     - url: "/assets/images/projects/yarn/IMG_2503.jpg"
+  #       description: Roving is placed on ring spinning machine and spun into approximately 20/1 cotton yarn.
+  #     - url: "/assets/images/projects/yarn/IMG_2601.m4v"
+  #       description: The package of yarn is transferred onto a cone for easier use while knitting.
+  #       type: video
   - title: Journey Lines
     project_url: "/journey-lines"
     year: 2017

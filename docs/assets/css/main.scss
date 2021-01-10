@@ -233,6 +233,12 @@ h3 {
         padding-right: 20vw !important;
       }
     }
+    .dl-link {
+      color: white;
+      &:hover {
+        color: $masthead-links-hover-color;
+      }
+    }
 
     .project-image-nav {
         width: 100%;

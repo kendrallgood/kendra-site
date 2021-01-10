@@ -42,7 +42,7 @@ projects:
     images:
       - url: "/assets/images/projects/exodus/A transparent logo.png"
       - url: "/assets/images/projects/exodus/B volunteer-life-guard-helps-young-girl-out-sea.jpg"
-      description: Photography by A. Zavallis. A life-guard helps a girl out of the sea after her family and other Afghan refugees cross the Aegean Sea from the coast of Turkey to Lesbos.
+        description: Photography by A. Zavallis. A life-guard helps a girl out of the sea after her family and other Afghan refugees cross the Aegean Sea from the coast of Turkey to Lesbos.
       - url: "/assets/images/projects/exodus/C Niarchos-Lesvos-1200 2.jpg"
       - url: "/assets/images/projects/exodus/opening-photo.jpg"
       - url: "/assets/images/projects/exodus/1 the grid.jpg"

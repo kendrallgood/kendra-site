@@ -5,11 +5,11 @@ projects:
     download_link: "/assets/images/projects/kaleidoscope/Kaleido Development.pdf"
     spotlight_image_url: "/assets/images/projects/kaleidoscope/dude blanket clean.jpg"
     images: 
-      - url: "/assets/images/projects/kaleidoscope/DIVIDER wave.png"
       - url: "/assets/images/projects/kaleidoscope/dude blanket close.jpg"
         description: Texture blanket, consisting of 30/1 light heather grey + 1/150 teal poly and 20/1 light heather blue + 20/1 dark heather blue. Each square is a unique texture that is a unique combination of these yarns.
       - url: "/assets/images/projects/kaleidoscope/Dude Blanket.jpg"
         description: Knit file of texture blanket.
+      - url: "/assets/images/projects/kaleidoscope/DIVIDER wave.png"
       - url: "/assets/images/projects/kaleidoscope/ludost render.png"
         description: A rendering demonstrating the design to a potential customer.
       - url: "/assets/images/projects/kaleidoscope/ludost full bed.jpg"
@@ -40,7 +40,7 @@ projects:
     download_link: "/assets/images/projects/exodus/EXODUS UNSEEN.pdf"
     spotlight_image_url: "/assets/images/projects/exodus/opening-photo.jpg"
     images:
-      - url: "/assets/images/projects/exodus/A transparent logo.png"
+      - url: "/assets/images/projects/exodus/ex un logo.png"
       - url: "/assets/images/projects/exodus/lifeguard and girl.jpg"
         description: Photograph by A. Zavallis. A life-guard helps a girl out of the sea after her family and other Afghan refugees cross the Aegean Sea from the coast of Turkey to Lesbos.
       - url: "/assets/images/projects/exodus/C Niarchos-Lesvos-1200 2.jpg"
